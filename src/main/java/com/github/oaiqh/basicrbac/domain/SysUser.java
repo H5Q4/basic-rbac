@@ -1,14 +1,8 @@
 package com.github.oaiqh.basicrbac.domain;
 
-import javax.persistence.*;
-
-import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
-import lombok.Data;
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
-import org.hibernate.annotations.NaturalIdCache;
 
+import javax.persistence.*;
 import java.util.Iterator;
 import java.util.Objects;
 import java.util.Set;

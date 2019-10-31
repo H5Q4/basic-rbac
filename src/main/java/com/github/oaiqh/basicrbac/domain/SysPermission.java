@@ -1,10 +1,8 @@
 package com.github.oaiqh.basicrbac.domain;
 
-import javax.persistence.*;
-
 import com.google.common.collect.Sets;
-import lombok.Data;
 
+import javax.persistence.*;
 import java.util.Objects;
 import java.util.Set;
 
