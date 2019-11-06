@@ -1,5 +1,10 @@
 package com.github.oaiqh.basicrbac.domain;
 
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,8 +15,11 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "sys_dept")
+@Getter
+@Setter
+@NoArgsConstructor
+@Builder
 public class SysDept extends AbstractAuditingEntity {
-    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,8 +37,8 @@ public class SysDept extends AbstractAuditingEntity {
     @Column(nullable = false)
     private Integer seq;
 
-    public SysDept() {
-    }
+    @Column(length = 200)
+    private String remark;
 
     @Override
     public boolean equals(Object o) {
@@ -43,45 +51,5 @@ public class SysDept extends AbstractAuditingEntity {
     @Override
     public int hashCode() {
         return Objects.hash(id);
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getParentId() {
-        return parentId;
-    }
-
-    public void setParentId(Long parentId) {
-        this.parentId = parentId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLevel() {
-        return level;
-    }
-
-    public void setLevel(String level) {
-        this.level = level;
-    }
-
-    public Integer getSeq() {
-        return seq;
-    }
-
-    public void setSeq(Integer seq) {
-        this.seq = seq;
     }
 }
